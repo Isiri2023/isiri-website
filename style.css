@@ -1,0 +1,255 @@
+/*
+ * ISIRI Seeds Export Company – Website Stylesheet
+ *
+ * This stylesheet defines the layout and appearance for the ISIRI website.
+ * The colour palette takes inspiration from other seed companies (green and white) to
+ * evoke nature and sustainability. The layout is deliberately simple and modular so
+ * you can easily add your own content later without worrying about breaking the design.
+ */
+
+/* Reset some basic styles to ensure consistent rendering across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Main colour palette */
+:root {
+  --primary-color: #2a7b0a; /* deep green for headers and buttons */
+  --secondary-color: #ffffff; /* white for backgrounds */
+  --accent-color: #4caf50; /* lighter green accent */
+  --text-light: #ffffff; /* light text on dark backgrounds */
+  --text-dark: #2c3e50; /* dark text on light backgrounds */
+}
+
+/* Navigation bar */
+header {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+header nav li {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+header nav li a {
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+header nav li:hover {
+  background-color: var(--accent-color);
+}
+
+/* Hero section (home page) */
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1538402074091-ee72f31c6288?auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-light);
+  padding: 6rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero .cta-button {
+  background-color: var(--accent-color);
+  color: var(--text-light);
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hero .cta-button:hover {
+  background-color: #3d8f3d;
+}
+
+/* General section styling */
+section {
+  padding: 4rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+section p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Products grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  background-color: var(--secondary-color);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.product-card .card-content {
+  padding: 1rem;
+}
+
+.product-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+/* About and Contact sections */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about img {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.about .text {
+  flex: 2;
+}
+
+/* Contact form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  header nav li {
+    margin: 0.5rem 0;
+  }
+  .about {
+    flex-direction: column;
+  }
+}
